@@ -1,0 +1,6 @@
+<th:block th:if="${session.basket == null}">
+  <div class="d-flex justify-content-center">장바구니가 비어있습니다.</div>
+</th:block>
+<th:block th:unless="${session.basket == null}">
+  <div class="d-flex justify-content-center" th:utext="|장바구니에 들어간 물건의 개수: ${#arrays.length(session.basket)}개|"></div>
+</th:block>

@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+group = 'bean'
+sourceCompatibility = '17'
+
+project.webAppDirName = 'WebContent'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.thymeleaf:thymeleaf:3.1.1.RELEASE'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
+
+
+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+
+    compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    compileOnly 'jakarta.mvc:jakarta.mvc-api:2.1.0'
+    
+
+    
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    implementation 'com.mylib:lib-1.0:1.0'
+}
