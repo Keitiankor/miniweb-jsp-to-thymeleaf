@@ -40,5 +40,5 @@ dependencies {
     
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
-    implementation 'com.mylib:lib-1.0:1.0'
+    implementation 'com.mylib:lib:1.1'
 }
